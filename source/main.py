@@ -1,4 +1,6 @@
 import random
+import csv
+import os
 
 def leave_one_out_cross_validaton(data, current_set_of_features, feature_to_add):
     return random.randint(0,10)
@@ -6,12 +8,12 @@ def leave_one_out_cross_validaton(data, current_set_of_features, feature_to_add)
 def feature_search_demo (data):
     current_set_of_features = [] # init empty set
 
-    for i in range (0, len(data)):
+    for i in range (1, len(data)):
         
         print("on the " + str(i + 1) + "th level of search tree")
         feature_to_add_at_this_level = None;
         best_so_far_accuracy = 0;
-        for k in range (0, len(data)):
+        for k in range (1, len(data)):
             if not (data[k] in current_set_of_features):
                 print("consider adding the feature " + str(data[k]))
                 accuracy = leave_one_out_cross_validaton(data, current_set_of_features, data[k])
@@ -31,9 +33,12 @@ def feature_search_demo (data):
 
 
 print("start")
-# tree = [
-#     [],
-#     [1,2,3,4],
-#     [1,2],[1,3]
-# ]
 feature_search_demo([1,2,3,4])
+
+# def main():
+#     os.chdir("data")
+#     with open("../data/CS170_Fall_2021_SMALL_data__91.txt", 'r') as smallData:
+#         data = csv.reader(smallData, delimiter=',')
+#         feature_search_demo(data)
+
+# main()
