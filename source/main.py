@@ -41,10 +41,10 @@ def main():
     os.chdir("data")
     with open("../data/CS170_Fall_2021_SMALL_data__91.txt", 'r') as smallData:
         # data = csv.reader(smallData, delimiter=' ',quoting=csv.QUOTE_NONNUMERIC)
-        data = pd.read_csv(smallData, delimiter='\t', dtype=float)
-        dataList = list(data)
-        print(dataList[0])
+        data = pd.read_csv(smallData, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
+        dataList = data.values.tolist()
+        # print(dataList[0])
         # print(len(dataList[0]))
-        # feature_search_demo(dataList)
+        feature_search_demo(dataList)
 
 main()
