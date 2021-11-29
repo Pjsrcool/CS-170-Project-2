@@ -126,7 +126,7 @@ def main():
     os.chdir("data")
     # my small set is 91
     # big is 57
-    with open("../data/CS170_Fall_2021_SMALL_data__86.txt", 'r') as smallData:
+    with open("Ver_2_CS170_Fall_2021_Small_data__86.txt", 'r') as smallData:
         # data = csv.reader(smallData, delimiter=' ',quoting=csv.QUOTE_NONNUMERIC)
         data = pd.read_csv(smallData, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
         dataList = data.values.tolist()
