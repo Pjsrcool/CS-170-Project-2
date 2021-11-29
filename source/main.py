@@ -8,7 +8,7 @@ import math
 
 def EuclideanDistance(pointA, pointB, features_to_compare):
     sum = 0
-    for i in range (1, len(features_to_compare)):
+    for i in range (0, len(features_to_compare)):
         sum += ((pointA[features_to_compare[i]] - pointB[features_to_compare[i]]) ** 2)
     return math.sqrt(sum)
 
@@ -19,7 +19,8 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
     features_to_compare.append(feature_to_add)
-    
+    print("comparing features: " + str(features_to_compare))
+
     for i in range (0, len(data)):
         object_to_classify = data[i]
         label_object_to_classify = data[i][0]
@@ -70,6 +71,8 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
 
 def feature_search_forward_selection (data):
     current_set_of_features = [] # init empty set
+    best_set_so_far = []
+    actual_best_accuracy = 0
 
     for i in range (1, len(data[0])):
         
@@ -80,7 +83,7 @@ def feature_search_forward_selection (data):
             if not (k in current_set_of_features):
                 print("consider adding the feature " + str(k))
                 accuracy = leave_one_out_cross_validaton_forward(data, current_set_of_features, k)
-                # print(accuracy)
+                print(accuracy)
                 if accuracy > best_so_far_accuracy:
                     best_so_far_accuracy = accuracy
                     feature_to_add_at_this_level = k
@@ -92,7 +95,13 @@ def feature_search_forward_selection (data):
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
         print()
 
-    print(current_set_of_features)
+        if (best_so_far_accuracy > actual_best_accuracy):
+            best_set_so_far = []
+            best_set_so_far.extend(current_set_of_features)
+            actual_best_accuracy = best_so_far_accuracy
+
+    # print(current_set_of_features)
+    print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
 
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
@@ -132,6 +141,9 @@ def main():
         dataList = data.values.tolist()
         # print(dataList[0])
         # print(len(dataList[0]))
+
+        # testAccuracy = leave_one_out_cross_validaton_forward(dataList, [7,4], 9)
+        # print(testAccuracy)
         feature_search_forward_selection(dataList)
         # feature_search_backward_elimination(dataList)
 
