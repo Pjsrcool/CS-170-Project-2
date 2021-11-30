@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import sys
 import math
+import time
 
 def EuclideanDistance(pointA, pointB, features_to_compare):
     sum = 0
@@ -19,7 +20,7 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
     features_to_compare.append(feature_to_add)
-    print("comparing features: " + str(features_to_compare))
+    # print("comparing features: " + str(features_to_compare))
 
     for i in range (0, len(data)):
         object_to_classify = data[i]
@@ -83,7 +84,7 @@ def feature_search_forward_selection (data):
             if not (k in current_set_of_features):
                 print("consider adding the feature " + str(k))
                 accuracy = leave_one_out_cross_validaton_forward(data, current_set_of_features, k)
-                print(accuracy)
+                # print(accuracy)
                 if accuracy > best_so_far_accuracy:
                     best_so_far_accuracy = accuracy
                     feature_to_add_at_this_level = k
@@ -160,9 +161,13 @@ def main():
         searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
         print()
 
+        start_time = time.time()
         if (searchType == '1'):
             feature_search_forward_selection(dataList)
         else:
             feature_search_backward_elimination(dataList)
+        end_time = time.time()
+        print()
+        print("runtime: %s seconds" % (end_time - start_time))
 
 main()
