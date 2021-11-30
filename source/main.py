@@ -135,16 +135,34 @@ def main():
     os.chdir("data")
     # my small set is 91
     # big is 57
-    with open("Ver_2_CS170_Fall_2021_Small_data__86.txt", 'r') as smallData:
+
+    # setNumber = 27
+
+    dataSet = input("Enter 1 for small data set.\nEnter 2 for large data set.\n--> ")
+    size = ""
+    if (dataSet == '2'):
+        size = "LARGE"
+        setNumber = 57
+    else:
+        size = "Small"
+        setNumber = 91
+
+
+    with open("Ver_2_CS170_Fall_2021_" + size + "_data__" + str(setNumber) + ".txt", 'r') as Data:
         # data = csv.reader(smallData, delimiter=' ',quoting=csv.QUOTE_NONNUMERIC)
-        data = pd.read_csv(smallData, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
+        data = pd.read_csv(Data, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
         dataList = data.values.tolist()
         # print(dataList[0])
         # print(len(dataList[0]))
 
         # testAccuracy = leave_one_out_cross_validaton_forward(dataList, [7,4], 9)
         # print(testAccuracy)
-        feature_search_forward_selection(dataList)
-        # feature_search_backward_elimination(dataList)
+        searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
+        print()
+
+        if (searchType == '1'):
+            feature_search_forward_selection(dataList)
+        else:
+            feature_search_backward_elimination(dataList)
 
 main()
