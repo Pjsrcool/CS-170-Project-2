@@ -72,6 +72,7 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
 
 def feature_search_forward_selection (data):
     current_set_of_features = [] # init empty set
+    accuracy_after_each_add = []
     best_set_so_far = []
     actual_best_accuracy = 0
 
@@ -91,6 +92,7 @@ def feature_search_forward_selection (data):
         
         if (feature_to_add_at_this_level != None):
             current_set_of_features.append(feature_to_add_at_this_level)
+            accuracy_after_each_add.append(best_so_far_accuracy)
         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))
         # print("on level " + str(i) + " we have features " + str(current_set_of_features))
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
@@ -103,6 +105,7 @@ def feature_search_forward_selection (data):
 
     # print(current_set_of_features)
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
+    return current_set_of_features, accuracy_after_each_add
 
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
@@ -134,19 +137,19 @@ def feature_search_backward_elimination(data):
 
 def main():
     os.chdir("data")
-    # my small set is 91
-    # big is 57
-
-    # setNumber = 27
 
     dataSet = input("Enter 1 for small data set.\nEnter 2 for large data set.\n--> ")
     size = ""
-    if (dataSet == '2'):
-        size = "LARGE"
-        setNumber = 57
-    else:
+    if (dataSet == '1'):
+        # my small set is 91
         size = "Small"
         setNumber = 91
+        # setNumber = 86
+    elif (dataSet == '2'):
+        # big is 57
+        size = "LARGE"
+        setNumber = 57
+    
 
 
     with open("Ver_2_CS170_Fall_2021_" + size + "_data__" + str(setNumber) + ".txt", 'r') as Data:
@@ -163,11 +166,16 @@ def main():
 
         start_time = time.time()
         if (searchType == '1'):
-            feature_search_forward_selection(dataList)
+            features, accuracy = feature_search_forward_selection(dataList)
         else:
             feature_search_backward_elimination(dataList)
         end_time = time.time()
         print()
+
+        i = 1
+        for a in accuracy:
+            print(str(features[0:i]) + " --> accuracy " + str(a))
+            i += 1
         print("runtime: %s seconds" % (end_time - start_time))
 
 main()
