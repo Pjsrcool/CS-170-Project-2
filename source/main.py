@@ -192,7 +192,7 @@ def main():
         print()
 
         # print results
-        if searchType = '1':
+        if searchType == '1':
             print(str([]) + " --> accuracy " + str(default_rate))
             i = 1
             for a in accuracy:
