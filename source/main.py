@@ -164,14 +164,30 @@ def main():
         searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
         print()
 
+        # begin calculation
         start_time = time.time()
+
         if (searchType == '1'):
             features, accuracy = feature_search_forward_selection(dataList)
         else:
             feature_search_backward_elimination(dataList)
+
+        # find default rate
+        class_1 = 0
+        for row in dataList:
+            if row[0] == 1:
+                class_1 += 1
+        if class_1 >= len(dataList):
+            default_rate = class_1 / len(dataList)
+        else:
+            default_rate = (len(dataList) - class_1) / len(dataList)
+
         end_time = time.time()
         print()
+        # finish calculation
 
+        # print results
+        print(str([]) + " --> accuracy " + str(default_rate))
         i = 1
         for a in accuracy:
             print(str(features[0:i]) + " --> accuracy " + str(a))
