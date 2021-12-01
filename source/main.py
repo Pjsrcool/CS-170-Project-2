@@ -94,7 +94,6 @@ def feature_search_forward_selection (data):
             current_set_of_features.append(feature_to_add_at_this_level)
             accuracy_after_each_add.append(best_so_far_accuracy)
         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))
-        # print("on level " + str(i) + " we have features " + str(current_set_of_features))
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
         print()
 
@@ -103,12 +102,16 @@ def feature_search_forward_selection (data):
             best_set_so_far.extend(current_set_of_features)
             actual_best_accuracy = best_so_far_accuracy
 
-    # print(current_set_of_features)
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return current_set_of_features, accuracy_after_each_add
 
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
+    accuracy_after_each_elimination = []
+    best_set_so_far = []
+    actual_best_accuracy = 0
+
+    # initialize current set of features to a list of all the features
     for i in range (1, len(data[0])):
         current_set_of_features.append(i)
     
@@ -127,17 +130,24 @@ def feature_search_backward_elimination(data):
         
         if (feature_to_remove_at_this_level != None):
             current_set_of_features.remove(feature_to_remove_at_this_level)
+            accuracy_after_each_elimination.append(best_so_far_accuracy)
         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))
-        # print("on level " + str(i) + " we have features " + str(current_set_of_features))
-        print("with accuracy " + str(best_so_far_accuracy))
+        print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
         print(current_set_of_features)
         print()
 
-    print(current_set_of_features)
+        if (best_so_far_accuracy > actual_best_accuracy):
+            best_set_so_far = []
+            best_set_so_far.extend(current_set_of_features)
+            actual_best_accuracy = best_so_far_accuracy
+
+    print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
+    return current_set_of_features, accuracy_after_each_elimination
 
 def main():
     os.chdir("data")
 
+    # here, we prompt the user to select whether to use the small or large data set
     dataSet = input("Enter 1 for small data set.\nEnter 2 for large data set.\n--> ")
     size = ""
     if (dataSet == '1'):
@@ -151,26 +161,16 @@ def main():
         setNumber = 57
     
 
-
+    # open the file and read from it
     with open("Ver_2_CS170_Fall_2021_" + size + "_data__" + str(setNumber) + ".txt", 'r') as Data:
-        # data = csv.reader(smallData, delimiter=' ',quoting=csv.QUOTE_NONNUMERIC)
         data = pd.read_csv(Data, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
         dataList = data.values.tolist()
-        # print(dataList[0])
-        # print(len(dataList[0]))
 
-        # testAccuracy = leave_one_out_cross_validaton_forward(dataList, [7,4], 9)
-        # print(testAccuracy)
         searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
         print()
 
         # begin calculation
         start_time = time.time()
-
-        if (searchType == '1'):
-            features, accuracy = feature_search_forward_selection(dataList)
-        else:
-            feature_search_backward_elimination(dataList)
 
         # find default rate
         class_1 = 0
@@ -181,17 +181,30 @@ def main():
             default_rate = class_1 / len(dataList)
         else:
             default_rate = (len(dataList) - class_1) / len(dataList)
+        
+        # perform feature search
+        if searchType == '1':
+            features, accuracy = feature_search_forward_selection(dataList)
+        elif searchType -- '2':
+            features, accuracy = feature_search_backward_elimination(dataList)
 
         end_time = time.time()
         print()
-        # finish calculation
 
         # print results
-        print(str([]) + " --> accuracy " + str(default_rate))
-        i = 1
-        for a in accuracy:
-            print(str(features[0:i]) + " --> accuracy " + str(a))
-            i += 1
+        if searchType = '1':
+            print(str([]) + " --> accuracy " + str(default_rate))
+            i = 1
+            for a in accuracy:
+                print(str(features[0:i]) + " --> accuracy " + str(a))
+                i += 1
+        elif searchType == '2':
+            i = 0
+            for a in accuracy:
+                print(str(features[0:i]) + " --> accuracy " + str(a))
+                i += 1
+            print(str([]) + " --> accuracy " + str(default_rate))
+
         print("runtime: %s seconds" % (end_time - start_time))
 
 main()
