@@ -8,14 +8,12 @@ import math
 import time
 from numba import jit
 
-@jit
 def EuclideanDistance(pointA, pointB, features_to_compare):
     sum = 0
     for i in range (0, len(features_to_compare)):
         sum += ((pointA[features_to_compare[i]] - pointB[features_to_compare[i]]) ** 2)
     return math.sqrt(sum)
 
-@jit
 def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature_to_add):
     # return random.randint(0,10)
 
@@ -45,7 +43,6 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
     # print(number_correctly_classified)
     return number_correctly_classified / len(data)
 
-@jit
 def leave_one_out_cross_validaton_backward(data, current_set_of_features, feature_to_remove):
     # return random.randint(0,10)
 
@@ -74,7 +71,6 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
     # print(number_correctly_classified)
     return number_correctly_classified / len(data)
 
-@jit
 def feature_search_forward_selection (data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_add = []
@@ -110,7 +106,6 @@ def feature_search_forward_selection (data):
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return current_set_of_features, accuracy_after_each_add
 
-@jit
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_elimination = []
@@ -151,7 +146,6 @@ def feature_search_backward_elimination(data):
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return set_at_each_level, accuracy_after_each_elimination
 
-@jit
 def main():
     os.chdir("data")
 
@@ -217,4 +211,3 @@ def main():
 
     print("runtime: %s seconds" % (end_time - start_time))
 
-main()
