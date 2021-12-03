@@ -6,13 +6,16 @@ import numpy as np
 import sys
 import math
 import time
+from numba import jit
 
+@jit
 def EuclideanDistance(pointA, pointB, features_to_compare):
     sum = 0
     for i in range (0, len(features_to_compare)):
         sum += ((pointA[features_to_compare[i]] - pointB[features_to_compare[i]]) ** 2)
     return math.sqrt(sum)
 
+@jit
 def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature_to_add):
     # return random.randint(0,10)
 
@@ -42,6 +45,7 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
     # print(number_correctly_classified)
     return number_correctly_classified / len(data)
 
+@jit
 def leave_one_out_cross_validaton_backward(data, current_set_of_features, feature_to_remove):
     # return random.randint(0,10)
 
@@ -70,6 +74,7 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
     # print(number_correctly_classified)
     return number_correctly_classified / len(data)
 
+@jit
 def feature_search_forward_selection (data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_add = []
@@ -105,6 +110,7 @@ def feature_search_forward_selection (data):
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return current_set_of_features, accuracy_after_each_add
 
+@jit
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_elimination = []
@@ -145,6 +151,7 @@ def feature_search_backward_elimination(data):
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return set_at_each_level, accuracy_after_each_elimination
 
+@jit
 def main():
     os.chdir("data")
 
@@ -163,51 +170,51 @@ def main():
     
 
     # open the file and read from it
-    with open("Ver_2_CS170_Fall_2021_" + size + "_data__" + str(setNumber) + ".txt", 'r') as Data:
-        data = pd.read_csv(Data, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
-        dataList = data.values.tolist()
+    Data =  open("Ver_2_CS170_Fall_2021_" + size + "_data__" + str(setNumber) + ".txt", 'r')
+    data = pd.read_csv(Data, sep="\s+", dtype=float, quoting=csv.QUOTE_NONNUMERIC)
+    dataList = data.values.tolist()
 
-        searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
-        print()
+    searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
+    print()
 
-        # begin calculation
-        start_time = time.time()
+    # begin calculation
+    start_time = time.time()
 
-        # find default rate
-        class_1 = 0
-        for row in dataList:
-            if row[0] == 1:
-                class_1 += 1
-        if class_1 >= len(dataList):
-            default_rate = class_1 / len(dataList)
-        else:
-            default_rate = (len(dataList) - class_1) / len(dataList)
-        print("the default rate is (empty set) is " + str(default_rate))
-        print()
+    # find default rate
+    class_1 = 0
+    for row in dataList:
+        if row[0] == 1:
+            class_1 += 1
+    if class_1 >= len(dataList):
+        default_rate = class_1 / len(dataList)
+    else:
+        default_rate = (len(dataList) - class_1) / len(dataList)
+    print("the default rate is (empty set) is " + str(default_rate))
+    print()
 
-        # perform feature search
-        if searchType == '1':
-            features, accuracy = feature_search_forward_selection(dataList)
-        elif searchType == '2':
-            features, accuracy = feature_search_backward_elimination(dataList)
+    # perform feature search
+    if searchType == '1':
+        features, accuracy = feature_search_forward_selection(dataList)
+    elif searchType == '2':
+        features, accuracy = feature_search_backward_elimination(dataList)
 
-        end_time = time.time()
-        print()
+    end_time = time.time()
+    print()
 
-        # print results
-        if searchType == '1':
-            print(str([]) + " --> accuracy " + str(default_rate))
-            i = 1
-            for a in accuracy:
-                print(str(features[0:i]) + " --> accuracy " + str(a))
-                i += 1
-        elif searchType == '2':
-            i = 0
-            for a,f in zip(accuracy,features):
-                print(str(f) + " --> accuracy " + str(a))
-                i += 1
-            print(str([]) + " --> accuracy " + str(default_rate))
+    # print results
+    if searchType == '1':
+        print(str([]) + " --> accuracy " + str(default_rate))
+        i = 1
+        for a in accuracy:
+            print(str(features[0:i]) + " --> accuracy " + str(a))
+            i += 1
+    elif searchType == '2':
+        i = 0
+        for a,f in zip(accuracy,features):
+            print(str(f) + " --> accuracy " + str(a))
+            i += 1
+        print(str([]) + " --> accuracy " + str(default_rate))
 
-        print("runtime: %s seconds" % (end_time - start_time))
+    print("runtime: %s seconds" % (end_time - start_time))
 
 main()
