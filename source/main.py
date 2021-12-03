@@ -109,6 +109,7 @@ def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_elimination = []
     best_set_so_far = []
+    set_at_each_level = []
     actual_best_accuracy = 0
 
     # initialize current set of features to a list of all the features
@@ -133,16 +134,16 @@ def feature_search_backward_elimination(data):
             accuracy_after_each_elimination.append(best_so_far_accuracy)
         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
-        print(current_set_of_features)
         print()
 
         if (best_so_far_accuracy > actual_best_accuracy):
             best_set_so_far = []
             best_set_so_far.extend(current_set_of_features)
+            set_at_each_level.append(best_set_so_far[0:len(best_set_so_far)])
             actual_best_accuracy = best_so_far_accuracy
 
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
-    return current_set_of_features, accuracy_after_each_elimination
+    return set_at_each_level, accuracy_after_each_elimination
 
 def main():
     os.chdir("data")
@@ -181,11 +182,13 @@ def main():
             default_rate = class_1 / len(dataList)
         else:
             default_rate = (len(dataList) - class_1) / len(dataList)
-        
+        print("the default rate is (empty set) is " + str(default_rate))
+        print()
+
         # perform feature search
         if searchType == '1':
             features, accuracy = feature_search_forward_selection(dataList)
-        elif searchType -- '2':
+        elif searchType == '2':
             features, accuracy = feature_search_backward_elimination(dataList)
 
         end_time = time.time()
@@ -200,8 +203,8 @@ def main():
                 i += 1
         elif searchType == '2':
             i = 0
-            for a in accuracy:
-                print(str(features[0:i]) + " --> accuracy " + str(a))
+            for a,f in zip(accuracy,features):
+                print(str(f) + " --> accuracy " + str(a))
                 i += 1
             print(str([]) + " --> accuracy " + str(default_rate))
 
