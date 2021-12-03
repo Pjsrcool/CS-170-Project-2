@@ -6,6 +6,3 @@ ext = Extension("main", sources=["source/main.pyx"])
 
 setup(ext_modules=[ext],
       cmdclass={'build_ext': build_ext})
-
-import main
-main()

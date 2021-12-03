@@ -96,7 +96,7 @@ def feature_search_forward_selection (data):
             accuracy_after_each_add.append(best_so_far_accuracy)
         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
-        print()
+        print("\n")
 
         if (best_so_far_accuracy > actual_best_accuracy):
             best_set_so_far = []
@@ -135,7 +135,7 @@ def feature_search_backward_elimination(data):
             accuracy_after_each_elimination.append(best_so_far_accuracy)
         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))
         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
-        print()
+        print("\n")
 
         if (best_so_far_accuracy > actual_best_accuracy):
             best_set_so_far = []
@@ -169,7 +169,7 @@ def main():
     dataList = data.values.tolist()
 
     searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
-    print()
+    print("\n")
 
     # begin calculation
     start_time = time.time()
@@ -184,7 +184,7 @@ def main():
     else:
         default_rate = (len(dataList) - class_1) / len(dataList)
     print("the default rate is (empty set) is " + str(default_rate))
-    print()
+    print("\n")
 
     # perform feature search
     if searchType == '1':
@@ -193,7 +193,7 @@ def main():
         features, accuracy = feature_search_backward_elimination(dataList)
 
     end_time = time.time()
-    print()
+    print("\n")
 
     # print results
     if searchType == '1':

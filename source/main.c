@@ -1277,6 +1277,7 @@ static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_input;
 static PyObject *__pyx_builtin_open;
 static PyObject *__pyx_builtin_zip;
+static const char __pyx_k_[] = "\n";
 static const char __pyx_k_1[] = "1";
 static const char __pyx_k_2[] = "2";
 static const char __pyx_k_a[] = "a";
@@ -1285,7 +1286,7 @@ static const char __pyx_k_i[] = "i";
 static const char __pyx_k_k[] = "k";
 static const char __pyx_k_r[] = "r";
 static const char __pyx_k_s[] = "\\s+";
-static const char __pyx_k__2[] = "";
+static const char __pyx_k__3[] = "";
 static const char __pyx_k_np[] = "np";
 static const char __pyx_k_os[] = "os";
 static const char __pyx_k_pd[] = "pd";
@@ -1384,6 +1385,7 @@ static const char __pyx_k_feature_search_forward_selection[] = "feature_search_f
 static const char __pyx_k_leave_one_out_cross_validaton_ba[] = "leave_one_out_cross_validaton_backward";
 static const char __pyx_k_leave_one_out_cross_validaton_fo[] = "leave_one_out_cross_validaton_forward";
 static const char __pyx_k_the_default_rate_is_empty_set_is[] = "the default rate is (empty set) is ";
+static PyObject *__pyx_kp_s_;
 static PyObject *__pyx_kp_s_1;
 static PyObject *__pyx_kp_s_2;
 static PyObject *__pyx_n_s_Data;
@@ -1394,7 +1396,7 @@ static PyObject *__pyx_n_s_LARGE;
 static PyObject *__pyx_n_s_QUOTE_NONNUMERIC;
 static PyObject *__pyx_n_s_Small;
 static PyObject *__pyx_n_s_Ver_2_CS170_Fall_2021;
-static PyObject *__pyx_kp_s__2;
+static PyObject *__pyx_kp_s__3;
 static PyObject *__pyx_n_s_a;
 static PyObject *__pyx_kp_s_accuracy;
 static PyObject *__pyx_kp_s_accuracy_2;
@@ -1503,20 +1505,20 @@ static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_int_57;
 static PyObject *__pyx_int_91;
-static PyObject *__pyx_tuple_;
-static PyObject *__pyx_tuple__3;
+static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__4;
-static PyObject *__pyx_tuple__6;
-static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__14;
-static PyObject *__pyx_codeobj__5;
-static PyObject *__pyx_codeobj__7;
-static PyObject *__pyx_codeobj__9;
-static PyObject *__pyx_codeobj__11;
-static PyObject *__pyx_codeobj__13;
-static PyObject *__pyx_codeobj__15;
+static PyObject *__pyx_tuple__5;
+static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_tuple__11;
+static PyObject *__pyx_tuple__13;
+static PyObject *__pyx_tuple__15;
+static PyObject *__pyx_codeobj__6;
+static PyObject *__pyx_codeobj__8;
+static PyObject *__pyx_codeobj__10;
+static PyObject *__pyx_codeobj__12;
+static PyObject *__pyx_codeobj__14;
+static PyObject *__pyx_codeobj__16;
 /* Late includes */
 
 /* "main.pyx":11
@@ -3143,7 +3145,7 @@ static PyObject *__pyx_pf_4main_6feature_search_forward_selection(CYTHON_UNUSED 
  *             accuracy_after_each_add.append(best_so_far_accuracy)
  *         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))             # <<<<<<<<<<<<<<
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
- *         print()
+ *         print("\n")
  */
     __pyx_t_5 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -3166,7 +3168,7 @@ static PyObject *__pyx_pf_4main_6feature_search_forward_selection(CYTHON_UNUSED 
  *             accuracy_after_each_add.append(best_so_far_accuracy)
  *         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))             # <<<<<<<<<<<<<<
- *         print()
+ *         print("\n")
  * 
  */
     __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_current_set_of_features); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
@@ -3186,14 +3188,14 @@ static PyObject *__pyx_pf_4main_6feature_search_forward_selection(CYTHON_UNUSED 
     /* "main.pyx":99
  *         print("on level " + str(i) + " we added features " + str(feature_to_add_at_this_level))
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
- *         print()             # <<<<<<<<<<<<<<
+ *         print("\n")             # <<<<<<<<<<<<<<
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):
  */
-    if (__Pyx_PrintOne(0, __pyx_empty_tuple) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_kp_s_) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
 
     /* "main.pyx":101
- *         print()
+ *         print("\n")
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):             # <<<<<<<<<<<<<<
  *             best_set_so_far = []
@@ -3236,7 +3238,7 @@ static PyObject *__pyx_pf_4main_6feature_search_forward_selection(CYTHON_UNUSED 
       __Pyx_DECREF_SET(__pyx_v_actual_best_accuracy, __pyx_v_best_so_far_accuracy);
 
       /* "main.pyx":101
- *         print()
+ *         print("\n")
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):             # <<<<<<<<<<<<<<
  *             best_set_so_far = []
@@ -3893,7 +3895,7 @@ static PyObject *__pyx_pf_4main_8feature_search_backward_elimination(CYTHON_UNUS
  *             accuracy_after_each_elimination.append(best_so_far_accuracy)
  *         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))             # <<<<<<<<<<<<<<
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
- *         print()
+ *         print("\n")
  */
     __pyx_t_6 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -3916,7 +3918,7 @@ static PyObject *__pyx_pf_4main_8feature_search_backward_elimination(CYTHON_UNUS
  *             accuracy_after_each_elimination.append(best_so_far_accuracy)
  *         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))             # <<<<<<<<<<<<<<
- *         print()
+ *         print("\n")
  * 
  */
     __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_current_set_of_features); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
@@ -3936,14 +3938,14 @@ static PyObject *__pyx_pf_4main_8feature_search_backward_elimination(CYTHON_UNUS
     /* "main.pyx":138
  *         print("on level " + str(i) + " we removed features " + str(feature_to_remove_at_this_level))
  *         print(str(current_set_of_features) + " accuracy: " + str(best_so_far_accuracy))
- *         print()             # <<<<<<<<<<<<<<
+ *         print("\n")             # <<<<<<<<<<<<<<
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):
  */
-    if (__Pyx_PrintOne(0, __pyx_empty_tuple) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_kp_s_) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
 
     /* "main.pyx":140
- *         print()
+ *         print("\n")
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):             # <<<<<<<<<<<<<<
  *             best_set_so_far = []
@@ -3999,7 +4001,7 @@ static PyObject *__pyx_pf_4main_8feature_search_backward_elimination(CYTHON_UNUS
       __Pyx_DECREF_SET(__pyx_v_actual_best_accuracy, __pyx_v_best_so_far_accuracy);
 
       /* "main.pyx":140
- *         print()
+ *         print("\n")
  * 
  *         if (best_so_far_accuracy > actual_best_accuracy):             # <<<<<<<<<<<<<<
  *             best_set_so_far = []
@@ -4187,7 +4189,7 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *     size = ""
  *     if (dataSet == '1'):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_dataSet = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4199,8 +4201,8 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *     if (dataSet == '1'):
  *         # my small set is 91
  */
-  __Pyx_INCREF(__pyx_kp_s__2);
-  __pyx_v_size = __pyx_kp_s__2;
+  __Pyx_INCREF(__pyx_kp_s__3);
+  __pyx_v_size = __pyx_kp_s__3;
 
   /* "main.pyx":155
  *     dataSet = input("Enter 1 for small data set.\nEnter 2 for large data set.\n--> ")
@@ -4388,10 +4390,10 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *     dataList = data.values.tolist()
  * 
  *     searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")             # <<<<<<<<<<<<<<
- *     print()
+ *     print("\n")
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_v_searchType = __pyx_t_6;
   __pyx_t_6 = 0;
@@ -4399,11 +4401,11 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
   /* "main.pyx":172
  * 
  *     searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
- *     print()             # <<<<<<<<<<<<<<
+ *     print("\n")             # <<<<<<<<<<<<<<
  * 
  *     # begin calculation
  */
-  if (__Pyx_PrintOne(0, __pyx_empty_tuple) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
 
   /* "main.pyx":175
  * 
@@ -4588,7 +4590,7 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *     else:
  *         default_rate = (len(dataList) - class_1) / len(dataList)             # <<<<<<<<<<<<<<
  *     print("the default rate is (empty set) is " + str(default_rate))
- *     print()
+ *     print("\n")
  */
   /*else*/ {
     __pyx_t_7 = PyObject_Length(__pyx_v_dataList); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 185, __pyx_L1_error)
@@ -4613,7 +4615,7 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *     else:
  *         default_rate = (len(dataList) - class_1) / len(dataList)
  *     print("the default rate is (empty set) is " + str(default_rate))             # <<<<<<<<<<<<<<
- *     print()
+ *     print("\n")
  * 
  */
   __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_default_rate); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 186, __pyx_L1_error)
@@ -4627,11 +4629,11 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
   /* "main.pyx":187
  *         default_rate = (len(dataList) - class_1) / len(dataList)
  *     print("the default rate is (empty set) is " + str(default_rate))
- *     print()             # <<<<<<<<<<<<<<
+ *     print("\n")             # <<<<<<<<<<<<<<
  * 
  *     # perform feature search
  */
-  if (__Pyx_PrintOne(0, __pyx_empty_tuple) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
 
   /* "main.pyx":190
  * 
@@ -4827,7 +4829,7 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
  *         features, accuracy = feature_search_backward_elimination(dataList)
  * 
  *     end_time = time.time()             # <<<<<<<<<<<<<<
- *     print()
+ *     print("\n")
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
@@ -4856,11 +4858,11 @@ static PyObject *__pyx_pf_4main_10main(CYTHON_UNUSED PyObject *__pyx_self) {
   /* "main.pyx":196
  * 
  *     end_time = time.time()
- *     print()             # <<<<<<<<<<<<<<
+ *     print("\n")             # <<<<<<<<<<<<<<
  * 
  *     # print results
  */
-  if (__Pyx_PrintOne(0, __pyx_empty_tuple) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
 
   /* "main.pyx":199
  * 
@@ -5323,6 +5325,7 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
   {&__pyx_kp_s_1, __pyx_k_1, sizeof(__pyx_k_1), 0, 0, 1, 0},
   {&__pyx_kp_s_2, __pyx_k_2, sizeof(__pyx_k_2), 0, 0, 1, 0},
   {&__pyx_n_s_Data, __pyx_k_Data, sizeof(__pyx_k_Data), 0, 0, 1, 1},
@@ -5333,7 +5336,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_QUOTE_NONNUMERIC, __pyx_k_QUOTE_NONNUMERIC, sizeof(__pyx_k_QUOTE_NONNUMERIC), 0, 0, 1, 1},
   {&__pyx_n_s_Small, __pyx_k_Small, sizeof(__pyx_k_Small), 0, 0, 1, 1},
   {&__pyx_n_s_Ver_2_CS170_Fall_2021, __pyx_k_Ver_2_CS170_Fall_2021, sizeof(__pyx_k_Ver_2_CS170_Fall_2021), 0, 0, 1, 1},
-  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
+  {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
   {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
   {&__pyx_kp_s_accuracy, __pyx_k_accuracy, sizeof(__pyx_k_accuracy), 0, 0, 1, 0},
   {&__pyx_kp_s_accuracy_2, __pyx_k_accuracy_2, sizeof(__pyx_k_accuracy_2), 0, 0, 1, 0},
@@ -5453,20 +5456,20 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     size = ""
  *     if (dataSet == '1'):
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Enter_1_for_small_data_set_Enter); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 153, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Enter_1_for_small_data_set_Enter); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
 
   /* "main.pyx":171
  *     dataList = data.values.tolist()
  * 
  *     searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")             # <<<<<<<<<<<<<<
- *     print()
+ *     print("\n")
  * 
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Enter_1_for_Forward_Selection_En); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 171, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Enter_1_for_Forward_Selection_En); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
 
   /* "main.pyx":11
  * from numba import jit
@@ -5475,10 +5478,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     sum = 0
  *     for i in range (0, len(features_to_compare)):
  */
-  __pyx_tuple__4 = PyTuple_Pack(5, __pyx_n_s_pointA, __pyx_n_s_pointB, __pyx_n_s_features_to_compare, __pyx_n_s_sum, __pyx_n_s_i); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_EuclideanDistance, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(5, __pyx_n_s_pointA, __pyx_n_s_pointB, __pyx_n_s_features_to_compare, __pyx_n_s_sum, __pyx_n_s_i); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_EuclideanDistance, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 11, __pyx_L1_error)
 
   /* "main.pyx":17
  *     return math.sqrt(sum)
@@ -5487,10 +5490,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     # return random.randint(0,10)
  * 
  */
-  __pyx_tuple__6 = PyTuple_Pack(13, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_feature_to_add, __pyx_n_s_number_correctly_classified, __pyx_n_s_features_to_compare, __pyx_n_s_i, __pyx_n_s_object_to_classify, __pyx_n_s_label_object_to_classify, __pyx_n_s_nearest_neighbor_distance, __pyx_n_s_nearest_neighbor_location, __pyx_n_s_nearest_neighbor_label, __pyx_n_s_k, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(3, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_leave_one_out_cross_validaton_fo, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(13, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_feature_to_add, __pyx_n_s_number_correctly_classified, __pyx_n_s_features_to_compare, __pyx_n_s_i, __pyx_n_s_object_to_classify, __pyx_n_s_label_object_to_classify, __pyx_n_s_nearest_neighbor_distance, __pyx_n_s_nearest_neighbor_location, __pyx_n_s_nearest_neighbor_label, __pyx_n_s_k, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_leave_one_out_cross_validaton_fo, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 17, __pyx_L1_error)
 
   /* "main.pyx":46
  *     return number_correctly_classified / len(data)
@@ -5499,10 +5502,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     # return random.randint(0,10)
  * 
  */
-  __pyx_tuple__8 = PyTuple_Pack(13, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_feature_to_remove, __pyx_n_s_number_correctly_classified, __pyx_n_s_features_to_compare, __pyx_n_s_i, __pyx_n_s_object_to_classify, __pyx_n_s_label_object_to_classify, __pyx_n_s_nearest_neighbor_distance, __pyx_n_s_nearest_neighbor_location, __pyx_n_s_nearest_neighbor_label, __pyx_n_s_k, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 46, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_leave_one_out_cross_validaton_ba, 46, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(13, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_feature_to_remove, __pyx_n_s_number_correctly_classified, __pyx_n_s_features_to_compare, __pyx_n_s_i, __pyx_n_s_object_to_classify, __pyx_n_s_label_object_to_classify, __pyx_n_s_nearest_neighbor_distance, __pyx_n_s_nearest_neighbor_location, __pyx_n_s_nearest_neighbor_label, __pyx_n_s_k, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(3, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_leave_one_out_cross_validaton_ba, 46, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 46, __pyx_L1_error)
 
   /* "main.pyx":74
  *     return number_correctly_classified / len(data)
@@ -5511,10 +5514,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     current_set_of_features = [] # init empty set
  *     accuracy_after_each_add = []
  */
-  __pyx_tuple__10 = PyTuple_Pack(10, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_accuracy_after_each_add, __pyx_n_s_best_set_so_far, __pyx_n_s_actual_best_accuracy, __pyx_n_s_i, __pyx_n_s_feature_to_add_at_this_level, __pyx_n_s_best_so_far_accuracy, __pyx_n_s_k, __pyx_n_s_accuracy_3); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 74, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_feature_search_forward_selection, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(10, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_accuracy_after_each_add, __pyx_n_s_best_set_so_far, __pyx_n_s_actual_best_accuracy, __pyx_n_s_i, __pyx_n_s_feature_to_add_at_this_level, __pyx_n_s_best_so_far_accuracy, __pyx_n_s_k, __pyx_n_s_accuracy_3); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_feature_search_forward_selection, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 74, __pyx_L1_error)
 
   /* "main.pyx":109
  *     return current_set_of_features, accuracy_after_each_add
@@ -5523,10 +5526,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     current_set_of_features = [] # init empty set
  *     accuracy_after_each_elimination = []
  */
-  __pyx_tuple__12 = PyTuple_Pack(11, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_accuracy_after_each_elimination, __pyx_n_s_best_set_so_far, __pyx_n_s_set_at_each_level, __pyx_n_s_actual_best_accuracy, __pyx_n_s_i, __pyx_n_s_feature_to_remove_at_this_level, __pyx_n_s_best_so_far_accuracy, __pyx_n_s_k, __pyx_n_s_accuracy_3); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_feature_search_backward_eliminat, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(11, __pyx_n_s_data, __pyx_n_s_current_set_of_features, __pyx_n_s_accuracy_after_each_elimination, __pyx_n_s_best_set_so_far, __pyx_n_s_set_at_each_level, __pyx_n_s_actual_best_accuracy, __pyx_n_s_i, __pyx_n_s_feature_to_remove_at_this_level, __pyx_n_s_best_so_far_accuracy, __pyx_n_s_k, __pyx_n_s_accuracy_3); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_feature_search_backward_eliminat, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 109, __pyx_L1_error)
 
   /* "main.pyx":149
  *     return set_at_each_level, accuracy_after_each_elimination
@@ -5535,10 +5538,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     os.chdir("data")
  * 
  */
-  __pyx_tuple__14 = PyTuple_Pack(17, __pyx_n_s_dataSet, __pyx_n_s_size, __pyx_n_s_setNumber, __pyx_n_s_Data, __pyx_n_s_data, __pyx_n_s_dataList, __pyx_n_s_searchType, __pyx_n_s_start_time, __pyx_n_s_class_1, __pyx_n_s_row, __pyx_n_s_default_rate, __pyx_n_s_features, __pyx_n_s_accuracy_3, __pyx_n_s_end_time, __pyx_n_s_i, __pyx_n_s_a, __pyx_n_s_f); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 149, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(0, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_main_2, 149, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(17, __pyx_n_s_dataSet, __pyx_n_s_size, __pyx_n_s_setNumber, __pyx_n_s_Data, __pyx_n_s_data, __pyx_n_s_dataList, __pyx_n_s_searchType, __pyx_n_s_start_time, __pyx_n_s_class_1, __pyx_n_s_row, __pyx_n_s_default_rate, __pyx_n_s_features, __pyx_n_s_accuracy_3, __pyx_n_s_end_time, __pyx_n_s_i, __pyx_n_s_a, __pyx_n_s_f); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(0, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_source_main_pyx, __pyx_n_s_main_2, 149, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
