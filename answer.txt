@@ -67,3 +67,1036 @@ large 57:
 [34, 29, 20, 2, 6, 5, 16, 44, 28, 32, 39, 45, 43, 46, 17, 30, 9, 14, 35, 42, 23, 11, 27, 25, 3, 4, 47, 31, 1, 48, 22, 49, 19, 26, 50, 10, 13, 8, 7, 40, 24, 38, 18, 15, 37, 21, 12, 33, 36] --> accuracy 0.7173586793396698
 [34, 29, 20, 2, 6, 5, 16, 44, 28, 32, 39, 45, 43, 46, 17, 30, 9, 14, 35, 42, 23, 11, 27, 25, 3, 4, 47, 31, 1, 48, 22, 49, 19, 26, 50, 10, 13, 8, 7, 40, 24, 38, 18, 15, 37, 21, 12, 33, 36, 41] --> accuracy 0.7148574287143572
 runtime: 11944.076261520386 seconds
+
+
+Backward Elim Small:
+
+best set is: [2, 6] with accuracy: 0.9739478957915831
+
+
+[2, 3, 4, 5, 6, 7, 8, 9, 10] --> accuracy 0.811623246492986
+[2, 3, 4, 5, 6, 7, 8, 10] --> accuracy 0.8316633266533067
+[2, 3, 4, 5, 6, 7, 10] --> accuracy 0.8416833667334669
+[2, 4, 5, 6, 7, 10] --> accuracy 0.8476953907815631
+[2, 4, 5, 6, 10] --> accuracy 0.8697394789579158
+[2, 5, 6, 10] --> accuracy 0.9138276553106213
+[2, 5, 6] --> accuracy 0.9579158316633266
+[2, 6] --> accuracy 0.9739478957915831
+[] --> accuracy 0.8396793587174348
+runtime: 6.5975542068481445 seconds
+
+
+
+Backward Elim Large:
+
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 11 we removed features 9
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7763881940970485
+
+
+on the 12th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 6
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 18
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 24
+consider removing the feature 25
+consider removing the feature 26
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 32
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 12 we removed features 26
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.776888444222111
+
+
+on the 13th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 6
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 18
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 24
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 32
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 13 we removed features 18
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 24, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7813906953476738
+
+
+on the 14th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 6
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 24
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 32
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 14 we removed features 24
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7808904452226113
+
+
+on the 15th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 6
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 32
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 15 we removed features 6
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7868934467233617
+
+
+on the 16th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 32
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 16 we removed features 32
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7893946973486743
+
+
+on the 17th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 19
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 17 we removed features 19
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7883941970985493
+
+
+on the 18th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 16
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 18 we removed features 16
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] accuracy: 0.7853926963481741
+
+
+on the 19th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+consider removing the feature 50
+on level 19 we removed features 50
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49] accuracy: 0.7823911955977989
+
+
+on the 20th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 48
+consider removing the feature 49
+on level 20 we removed features 48
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 49] accuracy: 0.7808904452226113
+
+
+on the 21th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 43
+consider removing the feature 44
+consider removing the feature 49
+on level 21 we removed features 43
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 44, 49] accuracy: 0.7793896948474237
+
+
+on the 22th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 41
+consider removing the feature 44
+consider removing the feature 49
+on level 22 we removed features 41
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.775887943971986
+
+
+on the 23th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 17
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 23 we removed features 17
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.7773886943471736
+
+
+on the 24th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 15
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 24 we removed features 15
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.7733866933466733
+
+
+on the 25th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 4
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 25 we removed features 4
+[1, 2, 3, 5, 7, 8, 10, 11, 12, 14, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.7718859429714857
+
+
+on the 26th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 25
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 26 we removed features 25
+[1, 2, 3, 5, 7, 8, 10, 11, 12, 14, 21, 23, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.776888444222111
+
+
+on the 27th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 28
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 27 we removed features 28
+[1, 2, 3, 5, 7, 8, 10, 11, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44, 49] accuracy: 0.776888444222111
+
+
+on the 28th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+consider removing the feature 49
+on level 28 we removed features 49
+[1, 2, 3, 5, 7, 8, 10, 11, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44] accuracy: 0.7773886943471736
+
+
+on the 29th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 11
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 29 we removed features 11
+[1, 2, 3, 5, 7, 8, 10, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44] accuracy: 0.7793896948474237
+
+
+on the 30th level of search tree
+consider removing the feature 1
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 30 we removed features 1
+[2, 3, 5, 7, 8, 10, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44] accuracy: 0.776888444222111
+
+
+on the 31th level of search tree
+consider removing the feature 2
+consider removing the feature 3
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 31 we removed features 3
+[2, 5, 7, 8, 10, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44] accuracy: 0.7728864432216108
+
+
+on the 32th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 7
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 32 we removed features 7
+[2, 5, 8, 10, 12, 14, 21, 23, 27, 30, 31, 33, 35, 36, 37, 38, 39, 44] accuracy: 0.7733866933466733
+
+
+on the 33th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 35
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 33 we removed features 35
+[2, 5, 8, 10, 12, 14, 21, 23, 27, 30, 31, 33, 36, 37, 38, 39, 44] accuracy: 0.7713856928464232
+
+
+on the 34th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 23
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 34 we removed features 23
+[2, 5, 8, 10, 12, 14, 21, 27, 30, 31, 33, 36, 37, 38, 39, 44] accuracy: 0.7658829414707353
+
+
+on the 35th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 31
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 35 we removed features 31
+[2, 5, 8, 10, 12, 14, 21, 27, 30, 33, 36, 37, 38, 39, 44] accuracy: 0.7633816908454227
+
+
+on the 36th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 8
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 36 we removed features 8
+[2, 5, 10, 12, 14, 21, 27, 30, 33, 36, 37, 38, 39, 44] accuracy: 0.7638819409704852
+
+
+on the 37th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 30
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 37 we removed features 30
+[2, 5, 10, 12, 14, 21, 27, 33, 36, 37, 38, 39, 44] accuracy: 0.7583791895947974
+
+
+on the 38th level of search tree
+consider removing the feature 2
+consider removing the feature 5
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 38 we removed features 5
+[2, 10, 12, 14, 21, 27, 33, 36, 37, 38, 39, 44] accuracy: 0.759879939969985
+
+
+on the 39th level of search tree
+consider removing the feature 2
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 38
+consider removing the feature 39
+consider removing the feature 44
+on level 39 we removed features 38
+[2, 10, 12, 14, 21, 27, 33, 36, 37, 39, 44] accuracy: 0.7593796898449224
+
+
+on the 40th level of search tree
+consider removing the feature 2
+consider removing the feature 10
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 39
+consider removing the feature 44
+on level 40 we removed features 10
+[2, 12, 14, 21, 27, 33, 36, 37, 39, 44] accuracy: 0.759879939969985
+
+
+on the 41th level of search tree
+consider removing the feature 2
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 39
+consider removing the feature 44
+on level 41 we removed features 2
+[12, 14, 21, 27, 33, 36, 37, 39, 44] accuracy: 0.7578789394697348
+
+
+on the 42th level of search tree
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 27
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 39
+consider removing the feature 44
+on level 42 we removed features 27
+[12, 14, 21, 33, 36, 37, 39, 44] accuracy: 0.7578789394697348
+
+
+on the 43th level of search tree
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 37
+consider removing the feature 39
+consider removing the feature 44
+on level 43 we removed features 37
+[12, 14, 21, 33, 36, 39, 44] accuracy: 0.753376688344172
+
+
+on the 44th level of search tree
+consider removing the feature 12
+consider removing the feature 14
+consider removing the feature 21
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 39
+consider removing the feature 44
+on level 44 we removed features 14
+[12, 21, 33, 36, 39, 44] accuracy: 0.7468734367183592
+
+
+on the 45th level of search tree
+consider removing the feature 12
+consider removing the feature 21
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 39
+consider removing the feature 44
+on level 45 we removed features 12
+[21, 33, 36, 39, 44] accuracy: 0.7488744372186094
+
+
+on the 46th level of search tree
+consider removing the feature 21
+consider removing the feature 33
+consider removing the feature 36
+consider removing the feature 39
+consider removing the feature 44
+on level 46 we removed features 33
+[21, 36, 39, 44] accuracy: 0.7498749374687343
+
+
+on the 47th level of search tree
+consider removing the feature 21
+consider removing the feature 36
+consider removing the feature 39
+consider removing the feature 44
+on level 47 we removed features 44
+[21, 36, 39] accuracy: 0.7433716858429215
+
+
+on the 48th level of search tree
+consider removing the feature 21
+consider removing the feature 36
+consider removing the feature 39
+on level 48 we removed features 36
+[21, 39] accuracy: 0.7383691845922962
+
+
+on the 49th level of search tree
+consider removing the feature 21
+consider removing the feature 39
+on level 49 we removed features 21
+[39] accuracy: 0.7283641820910455
+
+
+on the 50th level of search tree
+consider removing the feature 39
+on level 50 we removed features 39
+[] accuracy: 0.8439219609804902
+
+
+best set is: [] with accuracy: 0.8439219609804902
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50] --> accuracy 0.7303651825912957
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50] --> accuracy 0.7413706853426714
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 50] --> accuracy 0.7458729364682342
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 48, 49, 50] --> accuracy 0.7503751875937968
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 48, 49, 50] --> accuracy 0.7593796898449224
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 46, 48, 49, 50] --> accuracy 0.7638819409704852
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 46, 48, 49, 50] --> accuracy 0.768384192096048
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 46, 48, 49, 50] --> accuracy 0.7708854427213607
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 43, 44, 48, 49, 50] --> accuracy 0.7728864432216108
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] --> accuracy 0.7728864432216108
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] --> accuracy 0.7763881940970485
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 24, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] --> accuracy 0.776888444222111
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 25, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] --> accuracy 0.7813906953476738
+[1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 21, 23, 25, 27, 28, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 48, 49, 50] --> accuracy 0.7808904452226113
+[] --> accuracy 0.7868934467233617
+[] --> accuracy 0.8439219609804902
+runtime: 12828.60420536995 seconds
