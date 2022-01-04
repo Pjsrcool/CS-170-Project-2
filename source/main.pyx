@@ -8,15 +8,15 @@ import math
 import time
 from numba import jit
 
+# returns the Euclidean Distance between points A and B, using the desired features
 def EuclideanDistance(pointA, pointB, features_to_compare):
     sum = 0
     for i in range (0, len(features_to_compare)):
         sum += ((pointA[features_to_compare[i]] - pointB[features_to_compare[i]]) ** 2)
     return math.sqrt(sum)
 
+# Performs Leave One Out cross validation for Forward Selection
 def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature_to_add):
-    # return random.randint(0,10)
-
     number_correctly_classified = 0;
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
@@ -40,12 +40,11 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
                     nearest_neighbor_label = data[nearest_neighbor_location][0]
         if label_object_to_classify == nearest_neighbor_label:
             number_correctly_classified += 1
-    # print(number_correctly_classified)
+    
     return number_correctly_classified / len(data)
 
+# Performs Leave One Out cross validation for Backward Elimination
 def leave_one_out_cross_validaton_backward(data, current_set_of_features, feature_to_remove):
-    # return random.randint(0,10)
-
     number_correctly_classified = 0;
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
@@ -68,20 +67,22 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
                     nearest_neighbor_label = data[nearest_neighbor_location][0]
         if label_object_to_classify == nearest_neighbor_label:
             number_correctly_classified += 1
-    # print(number_correctly_classified)
+    
     return number_correctly_classified / len(data)
 
+# This function performs Forward Selection
 def feature_search_forward_selection (data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_add = []
     best_set_so_far = []
     actual_best_accuracy = 0
 
+    # iterate through each level of the search tree and check each feature
     for i in range (1, len(data[0])):
-        
         print("on the " + str(i) + "th level of search tree")
         feature_to_add_at_this_level = None;
         best_so_far_accuracy = 0;
+        #checking each feature
         for k in range (1, len(data[0])):
             if not (k in current_set_of_features):
                 print("consider adding the feature " + str(k))
@@ -106,6 +107,7 @@ def feature_search_forward_selection (data):
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
     return current_set_of_features, accuracy_after_each_add
 
+# This function performs Backward Elimination
 def feature_search_backward_elimination(data):
     current_set_of_features = [] # init empty set
     accuracy_after_each_elimination = []
@@ -117,15 +119,16 @@ def feature_search_backward_elimination(data):
     for i in range (1, len(data[0])):
         current_set_of_features.append(i)
     
+    # iterate through each level of the tree and check each feature
     for i in range (1, len(data[0])):
         print("on the " + str(i) + "th level of search tree")
         feature_to_remove_at_this_level = None;
         best_so_far_accuracy = 0;
+        # checking each feature
         for k in range (1, len(data[0])):
             if k in current_set_of_features:
                 print("consider removing the feature " + str(k))
                 accuracy = leave_one_out_cross_validaton_backward(data, current_set_of_features, k)
-                # print(accuracy)
                 if accuracy > best_so_far_accuracy:
                     best_so_far_accuracy = accuracy
                     feature_to_remove_at_this_level = k
