@@ -1,4 +1,3 @@
-import random
 import csv
 import os
 import pandas as pd
@@ -6,7 +5,8 @@ import numpy as np
 import sys
 import math
 import time
-from numba import jit, vectorize, cuda, int32, float32
+from numba import jit
+import itertools
 
 @jit
 def EuclideanDistance(pointA, pointB, features_to_compare):
@@ -16,14 +16,10 @@ def EuclideanDistance(pointA, pointB, features_to_compare):
     return math.sqrt(sum)
 
 @jit
-def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature_to_add):
-    # return random.randint(0,10)
-
+def leave_one_out_cross_validaton(data, current_set_of_features):
     number_correctly_classified = 0;
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
-    features_to_compare.append(feature_to_add)
-    # print("comparing features: " + str(features_to_compare))
 
     for i in range (0, len(data)):
         object_to_classify = data[i]
@@ -42,13 +38,38 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
                     nearest_neighbor_label = data[nearest_neighbor_location][0]
         if label_object_to_classify == nearest_neighbor_label:
             number_correctly_classified += 1
-    # print(number_correctly_classified)
+
+    return number_correctly_classified / len(data)
+
+@jit
+def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature_to_add):
+    number_correctly_classified = 0;
+    features_to_compare = []
+    features_to_compare.extend(current_set_of_features)
+    features_to_compare.append(feature_to_add)
+
+    for i in range (0, len(data)):
+        object_to_classify = data[i]
+        label_object_to_classify = data[i][0]
+
+        nearest_neighbor_distance = sys.maxsize
+        nearest_neighbor_location = sys.maxsize
+        nearest_neighbor_label = sys.maxsize
+
+        for k in range (0,len(data)):
+            if k != i:
+                distance = EuclideanDistance(object_to_classify,data[k], features_to_compare)
+                if distance < nearest_neighbor_distance:
+                    nearest_neighbor_distance = distance
+                    nearest_neighbor_location = k
+                    nearest_neighbor_label = data[nearest_neighbor_location][0]
+        if label_object_to_classify == nearest_neighbor_label:
+            number_correctly_classified += 1
+
     return number_correctly_classified / len(data)
 
 @jit
 def leave_one_out_cross_validaton_backward(data, current_set_of_features, feature_to_remove):
-    # return random.randint(0,10)
-
     number_correctly_classified = 0;
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
@@ -71,7 +92,7 @@ def leave_one_out_cross_validaton_backward(data, current_set_of_features, featur
                     nearest_neighbor_label = data[nearest_neighbor_location][0]
         if label_object_to_classify == nearest_neighbor_label:
             number_correctly_classified += 1
-    # print(number_correctly_classified)
+            
     return number_correctly_classified / len(data)
 
 @jit
@@ -82,7 +103,6 @@ def feature_search_forward_selection (data):
     actual_best_accuracy = 0
 
     for i in range (1, len(data[0])):
-        
         print("on the " + str(i) + "th level of search tree")
         feature_to_add_at_this_level = None;
         best_so_far_accuracy = 0;
@@ -130,7 +150,7 @@ def feature_search_backward_elimination(data):
             if k in current_set_of_features:
                 print("consider removing the feature " + str(k))
                 accuracy = leave_one_out_cross_validaton_backward(data, current_set_of_features, k)
-                # print(accuracy)
+                
                 if accuracy > best_so_far_accuracy:
                     best_so_far_accuracy = accuracy
                     feature_to_remove_at_this_level = k
@@ -149,12 +169,26 @@ def feature_search_backward_elimination(data):
             actual_best_accuracy = best_so_far_accuracy
 
     print("best set is: " + str(best_set_so_far) + " with accuracy: " + str(actual_best_accuracy))
+    return set_at_each_level, accuracy_after_each_elimination
 
-    calcs = []
-    calcs.extend(set_at_each_level)
-    calcs.extend(accuracy_after_each_elimination)
-    return calcs
-    # return set_at_each_level, accuracy_after_each_elimination
+@jit
+def bruteForce(data, features, features_to_compare):
+    accuracy = []
+    # features = list(np.arange(1, len(data[0])))
+    # features_to_compare = []
+    # # features = list(np.arange(1, 5))
+
+    # for i in range(0, len(features) + 1):
+    #     for combination in itertools.combinations(features, i):
+    #         # print(list(combination))
+    #         features_to_compare.append(list(combination))
+            
+    # print(features_to_compare)
+
+    for f in features_to_compare:
+        accuracy.append(leave_one_out_cross_validaton(data,np.array(f)))
+
+    return features_to_compare, accuracy
 
 if __name__=="__main__":
     os.chdir("data")
@@ -180,7 +214,7 @@ if __name__=="__main__":
     d = data.values.tolist()
     dataList = np.array(d)
 
-    searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\n--> ")
+    searchType = input ("Enter 1 for Forward Selection.\nEnter 2 for Backward Elimination.\nEnter 3 for brute force --> ")
     print("\n")
 
     # begin calculation
@@ -206,6 +240,16 @@ if __name__=="__main__":
         accuracy = calcs[1]
     elif searchType == '2':
         features, accuracy = feature_search_backward_elimination(dataList)
+    elif searchType == '3':
+        ff = list(np.arange(1, len(dataList[0])))
+        f2c = []
+
+        for i in range(0, len(ff) + 1):
+            for combination in itertools.combinations(ff, i):
+                # print(list(combination))
+                f2c.append(list(combination))
+
+        features, accuracy = bruteForce(dataList, np.array(ff), np.array(f2c))
 
     end_time = time.time()
     print("\n")
@@ -223,5 +267,9 @@ if __name__=="__main__":
             print(str(f) + " --> accuracy " + str(a))
             i += 1
         print(str([]) + " --> accuracy " + str(default_rate))
+    # elif searchType == '3':
+    #     for a, f in zip(accuracy, features):
+    #         print(str(f) + " --> accuracy " + str(a))
+
 
     print("runtime: %s seconds" % (end_time - start_time))

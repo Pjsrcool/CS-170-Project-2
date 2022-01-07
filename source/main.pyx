@@ -21,7 +21,6 @@ def leave_one_out_cross_validaton_forward(data, current_set_of_features, feature
     features_to_compare = []
     features_to_compare.extend(current_set_of_features)
     features_to_compare.append(feature_to_add)
-    # print("comparing features: " + str(features_to_compare))
 
     for i in range (0, len(data)):
         object_to_classify = data[i]
